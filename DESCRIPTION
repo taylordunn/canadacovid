@@ -18,4 +18,9 @@ RoxygenNote: 7.1.1
 URL: https://github.com/taylordunn/canadacovid
 BugReports: https://github.com/taylordunn/canadacovid/issues
 Imports: 
-    magrittr
+    jsonlite,
+    httr,
+    magrittr,
+    dplyr,
+    tidyselect,
+    rlang

@@ -22,37 +22,40 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/taylordunn/canadacovid/branch/main/graph/badge.svg)](https://app.codecov.io/gh/taylordunn/canadacovid?branch=main)
 <!-- badges: end -->
 
-The goal of canadacovid is to ...
+The goal of `canadacovid` is to provide a wrapper around the API service for the [COVID-19 Tracker Canada](https://covid19tracker.ca/).
 
 ## Installation
 
-You can install the development version of canadacovid like so:
+You can install the development version of `canadacovid` from GitHub:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+#install.packages("remotes")
+remotes::install_github("taylordunn/canadacovid")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+To get the latest summary data:
 
-```{r example}
+```{r summary_overall}
 library(canadacovid)
-## basic example code
+library(tidyverse)
+
+summary_overall <- get_summary()
+glimpse(summary_overall)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+By default, this returns the aggregate data over all of Canada.
+Provide a `split` argument to get a summary by province/territory:
 
-```{r cars}
-summary(cars)
+```{r}
+summary_province <- get_summary(split = "province")
+glimpse(summary_province)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+Or by health region:
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r}
+summary_region <- get_summary(split = "region")
+glimpse(summary_region)
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
