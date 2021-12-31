@@ -1,12 +1,15 @@
 Package: canadacovid
-Title: What the Package Does (One Line, Title Case)
+Title: API Wrapper for the Canadian COVID-19 Tracker
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Taylor", "Dunn", email = "t.dunn19@gmail.com",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8042-1611"))
+Description: Provides R functions to GET data from the Canadian COVID-19 tracker
+    API.
 License: MIT + file LICENSE
 Suggests: 
+    covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
@@ -14,3 +17,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/taylordunn/canadacovid
 BugReports: https://github.com/taylordunn/canadacovid/issues
+Imports: 
+    magrittr
