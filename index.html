@@ -63,8 +63,118 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-Provides R functions to GET data from the Canadian COVID-19 tracker
-    API.
+<div class="section level1">
+<div class="page-header"><h1 id="canadacovid">canadacovid<a class="anchor" aria-label="anchor" href="#canadacovid"></a>
+</h1></div>
+<!-- badges: start -->
+
+<p>The goal of <code>canadacovid</code> is to provide a wrapper around the API service for the <a href="https://covid19tracker.ca/" class="external-link">COVID-19 Tracker Canada</a>.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of <code>canadacovid</code> from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"taylordunn/canadacovid"</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>To get the latest summary data:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/taylordunn/canadacovid" class="external-link">canadacovid</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</span>
+<span class="co">#&gt; v ggplot2 3.3.5     v purrr   0.3.4</span>
+<span class="co">#&gt; v tibble  3.1.6     v dplyr   1.0.7</span>
+<span class="co">#&gt; v tidyr   1.1.4     v stringr 1.4.0</span>
+<span class="co">#&gt; v readr   2.1.1     v forcats 0.5.1</span>
+<span class="co">#&gt; -- Conflicts ------------------------------------------ tidyverse_conflicts() --</span>
+<span class="co">#&gt; x dplyr::filter() masks stats::filter()</span>
+<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span>
+
+<span class="va">summary_overall</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary.html">get_summary</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">summary_overall</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 1</span>
+<span class="co">#&gt; Columns: 22</span>
+<span class="co">#&gt; $ latest_date                 &lt;date&gt; 2021-12-31</span>
+<span class="co">#&gt; $ change_cases                &lt;int&gt; 35406</span>
+<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 33</span>
+<span class="co">#&gt; $ change_tests                &lt;int&gt; 137829</span>
+<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; 305</span>
+<span class="co">#&gt; $ change_criticals            &lt;int&gt; 17</span>
+<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 4683</span>
+<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 285617</span>
+<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 9147</span>
+<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 261121</span>
+<span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0</span>
+<span class="co">#&gt; $ total_cases                 &lt;int&gt; 2176408</span>
+<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 30313</span>
+<span class="co">#&gt; $ total_tests                 &lt;int&gt; 53074265</span>
+<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 3125</span>
+<span class="co">#&gt; $ total_criticals             &lt;int&gt; 531</span>
+<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 1879466</span>
+<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 68713001</span>
+<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 29411738</span>
+<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 7562263</span>
+<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 74073364</span>
+<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2021-12-30 20:00:00</span></code></pre></div>
+<p>By default, this returns the aggregate data over all of Canada. Provide a <code>split</code> argument to get a summary by province/territory:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">summary_province</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary.html">get_summary</a></span><span class="op">(</span>split <span class="op">=</span> <span class="st">"province"</span><span class="op">)</span>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">summary_province</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 13</span>
+<span class="co">#&gt; Columns: 23</span>
+<span class="co">#&gt; $ province                    &lt;chr&gt; "ON", "QC", "NS", "NB", "MB", "BC", "PE", ~</span>
+<span class="co">#&gt; $ date                        &lt;date&gt; 2021-12-31, 2021-12-31, 2021-12-31, 2021-~</span>
+<span class="co">#&gt; $ change_cases                &lt;int&gt; 16713, 16461, 0, 0, 1490, 0, 0, 742, 0, 0,~</span>
+<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 15, 13, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_tests                &lt;int&gt; 75093, 55446, 0, 0, 4471, 0, 0, 2819, 0, 0~</span>
+<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; 179, 124, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_criticals            &lt;int&gt; 5, 13, 0, 0, 1, 0, 0, -2, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 4630, 0, 0, 0, -21, 0, 0, 74, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 195809, 88164, 0, 0, 0, 0, 0, 1644, 0, 0, ~</span>
+<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 5571, 2540, 0, 0, 0, 0, 0, 1036, 0, 0, 0, ~</span>
+<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 178909, 82212, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
+<span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ total_cases                 &lt;int&gt; 756361, 603068, 17063, 13590, 80096, 25105~</span>
+<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 10194, 11724, 111, 159, 1392, 2420, 0, 955~</span>
+<span class="co">#&gt; $ total_tests                 &lt;int&gt; 21254037, 14868979, 1568215, 615048, 12743~</span>
+<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 1144, 1063, 25, 40, 192, 211, 0, 79, 371, ~</span>
+<span class="co">#&gt; $ total_criticals             &lt;int&gt; 205, 151, 3, 16, 30, 66, 0, 12, 48, 0, 0, ~</span>
+<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 647345, 488030, 8643, 10589, 68780, 230784~</span>
+<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 27208675, 15333304, 1785034, 1445189, 2441~</span>
+<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 11410550, 6687698, 794509, 622069, 1037539~</span>
+<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 3571791, 1342896, 128183, 146807, 276639, ~</span>
+<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 28411391, 16179459, 1950040, 1604365, 2885~</span>
+<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2021-12-30 20:00:00, 2021-12-30 20:00:00, ~</span></code></pre></div>
+<p>Or by health region:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">summary_region</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary.html">get_summary</a></span><span class="op">(</span>split <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">summary_region</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 92</span>
+<span class="co">#&gt; Columns: 19</span>
+<span class="co">#&gt; $ hr_uid                 &lt;int&gt; 6101, 6001, 1100, 6201, 1011, 1012, 1013, 1014,~</span>
+<span class="co">#&gt; $ date                   &lt;date&gt; 2021-12-23, 2021-12-23, 2021-12-23, 2021-12-28~</span>
+<span class="co">#&gt; $ change_cases           &lt;int&gt; 0, 9, NA, 31, NA, NA, NA, NA, NA, NA, NA, NA, N~</span>
+<span class="co">#&gt; $ change_fatalities      &lt;int&gt; 0, 0, NA, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ change_recoveries      &lt;int&gt; 0, 7, NA, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ total_cases            &lt;int&gt; 2090, 1661, 529, 710, 1380, 540, 305, 42, 685, ~</span>
+<span class="co">#&gt; $ total_fatalities       &lt;int&gt; 12, 14, 0, 4, 7, 10, 1, 0, 8, 7, 8, 87, 290, 85~</span>
+<span class="co">#&gt; $ total_tests            &lt;int&gt; 36435, 25087, 242814, 24355, 240838, 54999, 532~</span>
+<span class="co">#&gt; $ total_hospitalizations &lt;int&gt; 0, NA, 0, 263, 0, 0, 0, 0, NA, NA, NA, NA, 17, ~</span>
+<span class="co">#&gt; $ total_criticals        &lt;int&gt; 0, 0, 0, NA, 1, 0, 0, 0, NA, NA, NA, NA, 2, 18,~</span>
+<span class="co">#&gt; $ total_recoveries       &lt;int&gt; 2059, 1602, 417, 672, 1319, 473, 234, 41, 640, ~</span>
+<span class="co">#&gt; $ total_vaccinations     &lt;int&gt; 91434, 80825, 292619, 55230, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ total_vaccinated       &lt;int&gt; 36803, 34029, 133999, 24746, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ total_boosters_1       &lt;int&gt; 14692, 10341, 15181, NA, NA, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ change_tests           &lt;int&gt; NA, 70, NA, 969, NA, NA, NA, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ change_vaccinations    &lt;int&gt; NA, 0, 3486, 439, NA, NA, NA, NA, NA, NA, NA, N~</span>
+<span class="co">#&gt; $ change_vaccinated      &lt;int&gt; NA, 0, 128, 81, NA, NA, NA, NA, NA, NA, NA, NA,~</span>
+<span class="co">#&gt; $ change_boosters_1      &lt;int&gt; NA, 0, 2336, NA, NA, NA, NA, NA, NA, NA, NA, NA~</span>
+<span class="co">#&gt; $ last_updated           &lt;dttm&gt; 2021-12-30 20:00:00, 2021-12-30 20:00:00, 2021~</span></code></pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -106,7 +216,15 @@ Provides R functions to GET data from the Canadian COVID-19 tracker
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://CRAN.R-project.org/package=canadacovid" class="external-link"><img src="https://www.r-pkg.org/badges/version/canadacovid" alt="CRAN status"></a></li>
+<li><a href="https://github.com/taylordunn/canadacovid/actions" class="external-link"><img src="https://github.com/taylordunn/canadacovid/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://app.codecov.io/gh/taylordunn/canadacovid?branch=main" class="external-link"><img src="https://codecov.io/gh/taylordunn/canadacovid/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
