@@ -23,4 +23,5 @@ Imports:
     magrittr,
     dplyr,
     tidyselect,
-    rlang
+    rlang,
+    stringr
