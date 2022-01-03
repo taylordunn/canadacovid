@@ -29,7 +29,6 @@
 #' get_reports(province = c("AB", "SK"))
 #' get_reports(region = 1204)
 #' get_reports(region = c("472", 1204))
-#'
 #' @importFrom dplyr bind_rows bind_cols mutate across
 #' @importFrom tidyselect matches
 #' @importFrom rlang .data
@@ -40,8 +39,10 @@ get_reports <- function(split = c("overall", "province"),
                         fill_dates = NULL, stat = NULL, date = NULL,
                         after = NULL, before = NULL) {
   base_url <- "https://api.covid19tracker.ca/reports/"
-  province_codes <- c("AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON",
-                      "PE", "QC", "SK", "YT")
+  province_codes <- c(
+    "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON",
+    "PE", "QC", "SK", "YT"
+  )
 
   split <- match.arg(split)
   if (split == "province") province <- province_codes
@@ -50,7 +51,7 @@ get_reports <- function(split = c("overall", "province"),
   # Remove NULL parameters
   parameters <- parameters[lengths(parameters) == 1]
   if (length(parameters) > 0) {
-    params_url <- purrr::imap_chr(parameters, ~paste0(.y, "=", tolower(.x))) %>%
+    params_url <- purrr::imap_chr(parameters, ~ paste0(.y, "=", tolower(.x))) %>%
       paste(collapse = "&")
     params_url <- paste0("?", params_url)
   } else {
@@ -60,8 +61,10 @@ get_reports <- function(split = c("overall", "province"),
   if (!is.null(province)) {
     province <- match.arg(
       toupper(province),
-      choices = c("AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE",
-                  "QC", "SK", "YT"),
+      choices = c(
+        "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE",
+        "QC", "SK", "YT"
+      ),
       several.ok = TRUE
     )
 
