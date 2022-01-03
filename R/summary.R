@@ -17,7 +17,6 @@
 #' get_summary()
 #' get_summary("province")
 #' get_summary("region")
-#'
 #' @importFrom dplyr bind_rows bind_cols mutate across
 #' @importFrom tidyselect matches
 #' @importFrom rlang .data
@@ -25,7 +24,10 @@ get_summary <- function(split = c("overall", "province", "region")) {
   split <- match.arg(split)
   base_url <- "https://api.covid19tracker.ca/summary"
   split_path <- switch(split,
-                       overall = "", province = "/split", region = "/split/hr")
+    overall = "",
+    province = "/split",
+    region = "/split/hr"
+  )
   url <- paste0(base_url, split_path)
 
   content_parsed <- get_content_parsed(url)
