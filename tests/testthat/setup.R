@@ -1,3 +1,3 @@
-request_sleep <- function(seconds = 5) {
+request_sleep <- function(seconds = 10) {
   Sys.sleep(seconds)
 }
