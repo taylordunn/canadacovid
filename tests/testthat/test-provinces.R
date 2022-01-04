@@ -1,5 +1,5 @@
 test_that("get_provinces", {
-  Sys.sleep(1)
+  request_sleep()
   provinces <- get_provinces()
 
   expect_equal(nrow(provinces), 16)
