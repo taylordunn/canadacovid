@@ -25,5 +25,4 @@ combined), by "province" (one row per province/territory) or by "region"
 get_summary()
 get_summary("province")
 get_summary("region")
-
 }

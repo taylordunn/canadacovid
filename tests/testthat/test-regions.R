@@ -4,3 +4,12 @@ test_that("get_regions works", {
   expect_equal(nrow(regions), 92)
   expect_equal(dplyr::n_distinct(regions$province), 13)
 })
+
+test_that("get_subregions works", {
+  subregions <- get_subregions()
+  expect_equal(nrow(subregions), 806)
+  expect_equal(dplyr::n_distinct(subregions$province), 6)
+
+  subregions_3 <- get_subregions(c("ON322", "SK010", "MB029", "test"))
+  expect_setequal(unique(subregions_3$province), c("ON", "SK", "MB"))
+})

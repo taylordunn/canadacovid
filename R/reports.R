@@ -16,6 +16,12 @@
 #'   Upper, lower and mixed case strings are accepted.
 #' @param region One or more health region IDs to get reports. Numeric and
 #'   character values are accepted.
+#' @param fill_dates When TRUE, the response fills in any missing dates with
+#'   blank entries.
+#' @param stat Returns only the specified statistics, e.g. "cases".
+#' @param date Returns reports from only the specified date.
+#' @param after Returns reports from only on or after the specified date.
+#' @param before Returns reports from only on or before the specified date.
 #'
 #' @return A data frame containing the reports data, one row per day. Includes
 #'   a `province` variable if data is split by province, and a `hr_uid` variable
@@ -28,7 +34,7 @@
 #' get_reports("province")
 #' get_reports(province = c("AB", "SK"))
 #' get_reports(region = 1204)
-#' get_reports(region = c("472", 1204))
+#' get_reports(region = c("472", 1204), stat = "cases")
 #' @importFrom dplyr bind_rows bind_cols mutate across
 #' @importFrom tidyselect matches
 #' @importFrom rlang .data
