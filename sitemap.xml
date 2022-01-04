@@ -25,7 +25,28 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/get_content_parsed.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_provinces.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_regions.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_reports.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_subregion_vaccination_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_subregions.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_summary.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_vaccination_data.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
