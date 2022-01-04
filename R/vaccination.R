@@ -27,12 +27,11 @@
 #'
 #' get_subregion_vaccination_data()
 #' get_subregion_vaccination_data("recent")
-#' get_subregion_vaccination_data("all")
+#' get_subregion_vaccination_data("all", subregion_code = c("ON382", "SK007"))
 #'
 #' @importFrom dplyr bind_cols bind_rows mutate
 #' @importFrom purrr map_dfr
 #' @importFrom tidyselect matches
-#' @importFrom rlang .data
 get_subregion_vaccination_data <- function(dates = c("current", "recent", "all"),
                                            subregion_code = NULL) {
   dates <- match.arg(dates)
@@ -74,7 +73,7 @@ get_subregion_vaccination_data <- function(dates = c("current", "recent", "all")
       dplyr::across(tidyselect::matches("^total"), as.integer),
       dplyr::across(tidyselect::matches("^percent"), as.numeric),
       dplyr::across(tidyselect::matches("date"), as.Date),
-      last_updated = as.POSIXct(.data$last_updated)
+      dplyr::across(tidyselect::matches("last_updated"), as.POSIXct)
     )
 }
 

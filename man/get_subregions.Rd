@@ -4,7 +4,10 @@
 \alias{get_subregions}
 \title{Get sub-regions}
 \usage{
-get_subregions()
+get_subregions(subregion_code = NULL)
+}
+\arguments{
+\item{subregion_code}{Specifiy one or more sub-regions to be returned.}
 }
 \value{
 A data frame with a row per sub-region.
@@ -15,5 +18,7 @@ Get sub-regions
 \examples{
 
 get_subregions()
+get_subregions("AB001")
+get_subregions(c("SK003", "SK005"))
 
 }
