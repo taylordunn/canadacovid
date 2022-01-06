@@ -4,16 +4,23 @@
 \alias{get_regions}
 \title{Get health regions}
 \usage{
-get_regions()
+get_regions(hr_uid = NULL, province = NULL)
+}
+\arguments{
+\item{hr_uid}{One or more health region UIDs (e.g. 3553) to return.}
+
+\item{province}{One or more provinces to return.}
 }
 \value{
 A data frame with a row per health region.
 }
 \description{
-Get health regions
+Returns a list of health regions in the COVID-19 tracker.
+By default (\code{hr_uid} and \code{province} \code{NULL}), returns all 92 regions.
 }
 \examples{
 
 get_regions()
-
+get_regions(hr_uid = c("2414", 591))
+get_regions(province = c("ns", "SK"))
 }

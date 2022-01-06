@@ -4,6 +4,14 @@ test_that("get_regions works", {
   expect_true("hr_uid" %in% names(regions))
   expect_equal(nrow(regions), 92)
   expect_equal(dplyr::n_distinct(regions$province), 13)
+
+  request_sleep()
+  regions_2418_3534 <- get_regions(hr_uid = c(2418, "3534"))
+  expect_equal(regions_2418_3534$hr_uid, c(2418, 3534))
+
+  request_sleep()
+  regions_mb_bc <- get_regions(province = c("mb", "bC"))
+  expect_equal(unique(regions_mb_bc$province), c("MB", "BC"))
 })
 
 test_that("get_subregions works", {
