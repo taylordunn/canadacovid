@@ -39,23 +39,33 @@ To get the latest summary data:
 
 ```{r summary_overall}
 library(canadacovid)
-library(tidyverse)
+library(tidyverse, quietly = TRUE)
 
 summary_overall <- get_summary()
 glimpse(summary_overall)
 ```
 
 By default, this returns the aggregate data over all of Canada.
-Provide a `split` argument to get a summary by province/territory:
+Provide a `split` argument to get a summary by "province" or "region":
 
-```{r}
+```{r summary_province}
 summary_province <- get_summary(split = "province")
 glimpse(summary_province)
 ```
 
-Or by health region:
+Day-by-day reports are retrieved with `get_reports`:
 
-```{r}
-summary_region <- get_summary(split = "region")
-glimpse(summary_region)
+```{r get_reports_overall}
+reports_overall <- get_reports()
+glimpse(reports_overall)
 ```
+
+This function comes with a number of arguments to return very specific data:
+
+```{r get_reports_ns}
+reports_ns_fatalities_2021 <-
+  get_reports(province = "NS", stat = "fatalities",
+              after = "2021-01-01", before = "2021-12-31")
+glimpse(reports_ns_fatalities_2021)
+```
+

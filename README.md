@@ -32,7 +32,7 @@ To get the latest summary data:
 
 ``` r
 library(canadacovid)
-library(tidyverse)
+library(tidyverse, quietly = TRUE)
 #> -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
 #> v ggplot2 3.3.5     v purrr   0.3.4
 #> v tibble  3.1.6     v dplyr   1.0.7
@@ -46,87 +46,107 @@ summary_overall <- get_summary()
 glimpse(summary_overall)
 #> Rows: 1
 #> Columns: 22
-#> $ latest_date                 <date> 2021-12-31
-#> $ change_cases                <int> 35406
-#> $ change_fatalities           <int> 33
-#> $ change_tests                <int> 137829
-#> $ change_hospitalizations     <int> 305
-#> $ change_criticals            <int> 17
-#> $ change_recoveries           <int> 4683
-#> $ change_vaccinations         <int> 285617
-#> $ change_vaccinated           <int> 9147
-#> $ change_boosters_1           <int> 261121
+#> $ last_updated                <dttm> 2022-01-04 20:00:00
+#> $ latest_date                 <date> 2022-01-05
+#> $ change_cases                <int> 38567
+#> $ change_fatalities           <int> 68
+#> $ change_tests                <int> 84125
+#> $ change_hospitalizations     <int> 1022
+#> $ change_criticals            <int> 39
+#> $ change_recoveries           <int> 21672
+#> $ change_vaccinations         <int> 291073
+#> $ change_vaccinated           <int> 14300
+#> $ change_boosters_1           <int> 258695
 #> $ change_vaccines_distributed <int> 0
-#> $ total_cases                 <int> 2176408
-#> $ total_fatalities            <int> 30313
-#> $ total_tests                 <int> 53074265
-#> $ total_hospitalizations      <int> 3125
-#> $ total_criticals             <int> 531
-#> $ total_recoveries            <int> 1879466
-#> $ total_vaccinations          <int> 68713001
-#> $ total_vaccinated            <int> 29411738
-#> $ total_boosters_1            <int> 7562263
-#> $ total_vaccines_distributed  <int> 74073364
-#> $ last_updated                <dttm> 2021-12-30 20:00:00
+#> $ total_cases                 <int> 2393543
+#> $ total_fatalities            <int> 30524
+#> $ total_tests                 <int> 53632718
+#> $ total_hospitalizations      <int> 5081
+#> $ total_criticals             <int> 701
+#> $ total_recoveries            <int> 1938674
+#> $ total_vaccinations          <int> 69853531
+#> $ total_vaccinated            <int> 29464565
+#> $ total_boosters_1            <int> 8573395
+#> $ total_vaccines_distributed  <int> 74272404
 ```
 
 By default, this returns the aggregate data over all of Canada. Provide
-a `split` argument to get a summary by province/territory:
+a `split` argument to get a summary by “province” or “region”:
 
 ``` r
 summary_province <- get_summary(split = "province")
 glimpse(summary_province)
 #> Rows: 13
 #> Columns: 23
+#> $ last_updated                <dttm> 2022-01-04 20:00:00, 2022-01-04 20:00:00,~
 #> $ province                    <chr> "ON", "QC", "NS", "NB", "MB", "BC", "PE", ~
-#> $ date                        <date> 2021-12-31, 2021-12-31, 2021-12-31, 2021-~
-#> $ change_cases                <int> 16713, 16461, 0, 0, 1490, 0, 0, 742, 0, 0,~
-#> $ change_fatalities           <int> 15, 13, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0
-#> $ change_tests                <int> 75093, 55446, 0, 0, 4471, 0, 0, 2819, 0, 0~
-#> $ change_hospitalizations     <int> 179, 124, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0
-#> $ change_criticals            <int> 5, 13, 0, 0, 1, 0, 0, -2, 0, 0, 0, 0, 0
-#> $ change_recoveries           <int> 4630, 0, 0, 0, -21, 0, 0, 74, 0, 0, 0, 0, 0
-#> $ change_vaccinations         <int> 195809, 88164, 0, 0, 0, 0, 0, 1644, 0, 0, ~
-#> $ change_vaccinated           <int> 5571, 2540, 0, 0, 0, 0, 0, 1036, 0, 0, 0, ~
-#> $ change_boosters_1           <int> 178909, 82212, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ date                        <date> 2022-01-05, 2022-01-05, 2022-01-05, 2022-~
+#> $ change_cases                <int> 11582, 14486, 842, 779, 1787, 3798, 0, 541~
+#> $ change_fatalities           <int> 13, 39, 0, 3, 2, 0, 0, 0, 11, 0, 0, 0, 0
+#> $ change_tests                <int> 59137, 0, 0, 3668, 6237, 0, 0, 2389, 12694~
+#> $ change_hospitalizations     <int> 791, 158, 5, 3, 1, 19, 0, 11, 34, 0, 0, 0,~
+#> $ change_criticals            <int> 22, 6, 3, 0, -2, -3, 0, 2, 11, 0, 0, 0, 0
+#> $ change_recoveries           <int> 11669, 0, 7057, 65, 17, 886, 0, 157, 1821,~
+#> $ change_vaccinations         <int> 180013, 0, 22337, 5587, 12107, 41463, 0, 1~
+#> $ change_vaccinated           <int> 8682, 0, 546, 268, 454, 1593, 0, 1272, 148~
+#> $ change_boosters_1           <int> 161487, 0, 20447, 4785, 11013, 37165, 0, 0~
 #> $ change_vaccines_distributed <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-#> $ total_cases                 <int> 756361, 603068, 17063, 13590, 80096, 25105~
-#> $ total_fatalities            <int> 10194, 11724, 111, 159, 1392, 2420, 0, 955~
-#> $ total_tests                 <int> 21254037, 14868979, 1568215, 615048, 12743~
-#> $ total_hospitalizations      <int> 1144, 1063, 25, 40, 192, 211, 0, 79, 371, ~
-#> $ total_criticals             <int> 205, 151, 3, 16, 30, 66, 0, 12, 48, 0, 0, ~
-#> $ total_recoveries            <int> 647345, 488030, 8643, 10589, 68780, 230784~
-#> $ total_vaccinations          <int> 27208675, 15333304, 1785034, 1445189, 2441~
-#> $ total_vaccinated            <int> 11410550, 6687698, 794509, 622069, 1037539~
-#> $ total_boosters_1            <int> 3571791, 1342896, 128183, 146807, 276639, ~
+#> $ total_cases                 <int> 828032, 680308, 22456, 18345, 89050, 27050~
+#> $ total_fatalities            <int> 10252, 11820, 111, 168, 1402, 2427, 0, 960~
+#> $ total_tests                 <int> 21549027, 14868979, 1601042, 630521, 12992~
+#> $ total_hospitalizations      <int> 2081, 1750, 45, 59, 252, 317, 0, 106, 470,~
+#> $ total_criticals             <int> 288, 191, 8, 16, 30, 83, 0, 13, 72, 0, 0, ~
+#> $ total_recoveries            <int> 683750, 488030, 15700, 11352, 68804, 23719~
+#> $ total_vaccinations          <int> 27750953, 15457130, 1815283, 1466105, 2515~
+#> $ total_vaccinated            <int> 11436474, 6691563, 795461, 622997, 1039795~
+#> $ total_boosters_1            <int> 4056554, 1457767, 155144, 164358, 344261, ~
 #> $ total_vaccines_distributed  <int> 28411391, 16179459, 1950040, 1604365, 2885~
-#> $ last_updated                <dttm> 2021-12-30 20:00:00, 2021-12-30 20:00:00, ~
 ```
 
-Or by health region:
+Day-by-day reports are retrieved with `get_reports`:
 
 ``` r
-summary_region <- get_summary(split = "region")
-glimpse(summary_region)
-#> Rows: 92
-#> Columns: 19
-#> $ hr_uid                 <int> 6101, 6001, 1100, 6201, 1011, 1012, 1013, 1014,~
-#> $ date                   <date> 2021-12-23, 2021-12-23, 2021-12-23, 2021-12-28~
-#> $ change_cases           <int> 0, 9, NA, 31, NA, NA, NA, NA, NA, NA, NA, NA, N~
-#> $ change_fatalities      <int> 0, 0, NA, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA~
-#> $ change_recoveries      <int> 0, 7, NA, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA~
-#> $ total_cases            <int> 2090, 1661, 529, 710, 1380, 540, 305, 42, 685, ~
-#> $ total_fatalities       <int> 12, 14, 0, 4, 7, 10, 1, 0, 8, 7, 8, 87, 290, 85~
-#> $ total_tests            <int> 36435, 25087, 242814, 24355, 240838, 54999, 532~
-#> $ total_hospitalizations <int> 0, NA, 0, 263, 0, 0, 0, 0, NA, NA, NA, NA, 17, ~
-#> $ total_criticals        <int> 0, 0, 0, NA, 1, 0, 0, 0, NA, NA, NA, NA, 2, 18,~
-#> $ total_recoveries       <int> 2059, 1602, 417, 672, 1319, 473, 234, 41, 640, ~
-#> $ total_vaccinations     <int> 91434, 80825, 292619, 55230, NA, NA, NA, NA, NA~
-#> $ total_vaccinated       <int> 36803, 34029, 133999, 24746, NA, NA, NA, NA, NA~
-#> $ total_boosters_1       <int> 14692, 10341, 15181, NA, NA, NA, NA, NA, NA, NA~
-#> $ change_tests           <int> NA, 70, NA, 969, NA, NA, NA, NA, NA, NA, NA, NA~
-#> $ change_vaccinations    <int> NA, 0, 3486, 439, NA, NA, NA, NA, NA, NA, NA, N~
-#> $ change_vaccinated      <int> NA, 0, 128, 81, NA, NA, NA, NA, NA, NA, NA, NA,~
-#> $ change_boosters_1      <int> NA, 0, 2336, NA, NA, NA, NA, NA, NA, NA, NA, NA~
-#> $ last_updated           <dttm> 2021-12-30 20:00:00, 2021-12-30 20:00:00, 2021~
+reports_overall <- get_reports()
+glimpse(reports_overall)
+#> Rows: 712
+#> Columns: 22
+#> $ last_updated                <dttm> 2022-01-04 20:00:00, 2022-01-04 20:00:00,~
+#> $ date                        <date> 2020-01-25, 2020-01-26, 2020-01-27, 2020-~
+#> $ change_cases                <int> 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, ~
+#> $ change_fatalities           <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_tests                <int> 2, 4, 20, 10, 3, 26, 33, 23, 24, 16, 56, 5~
+#> $ change_hospitalizations     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_criticals            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_recoveries           <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_vaccinations         <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_vaccinated           <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_boosters_1           <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ change_vaccines_distributed <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_cases                 <int> 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 7, 7, ~
+#> $ total_fatalities            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_tests                 <int> 2, 6, 26, 36, 39, 65, 98, 121, 145, 161, 2~
+#> $ total_hospitalizations      <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_criticals             <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_recoveries            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_vaccinations          <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_vaccinated            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_boosters_1            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+#> $ total_vaccines_distributed  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+```
+
+This function comes with a number of arguments to return very specific
+data:
+
+``` r
+reports_ns_fatalities_2021 <-
+  get_reports(province = "NS", stat = "fatalities",
+              after = "2021-01-01", before = "2021-12-31")
+glimpse(reports_ns_fatalities_2021)
+#> Rows: 365
+#> Columns: 5
+#> $ province          <chr> "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS"~
+#> $ last_updated      <dttm> 2022-01-04 20:00:00, 2022-01-04 20:00:00, 2022-01-0~
+#> $ date              <date> 2021-01-01, 2021-01-02, 2021-01-03, 2021-01-04, 202~
+#> $ change_fatalities <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+#> $ total_fatalities  <int> 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, ~
 ```
