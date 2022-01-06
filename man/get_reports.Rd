@@ -32,11 +32,14 @@ blank entries.}
 
 \item{stat}{Returns only the specified statistics, e.g. "cases".}
 
-\item{date}{Returns reports from only the specified date.}
+\item{date}{Returns reports from only the specified date,
+in YYYY-MM-DD format.}
 
-\item{after}{Returns reports from only on or after the specified date.}
+\item{after}{Returns reports from only on or after the specified date,
+in YYYY-MM-DD format.}
 
-\item{before}{Returns reports from only on or before the specified date.}
+\item{before}{Returns reports from only on or before the specified date,
+in YYYY-MM-DD format.}
 }
 \value{
 A data frame containing the reports data, one row per day. Includes

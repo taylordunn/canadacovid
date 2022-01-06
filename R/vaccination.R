@@ -103,9 +103,12 @@ get_subregion_vaccination_data <- function(dates = c("current", "recent", "all")
 #' @param fill_dates When TRUE, the response fills in any missing dates with
 #'   blank entries.
 #' @param stat Returns only the specified statistics, e.g. "cases".
-#' @param date Returns reports from only the specified date.
-#' @param after Returns reports from only on or after the specified date.
-#' @param before Returns reports from only on or before the specified date.
+#' @param date Returns reports from only the specified date,
+#'   in YYYY-MM-DD format.
+#' @param after Returns reports from only on or after the specified date,
+#'   in YYYY-MM-DD format.
+#' @param before Returns reports from only on or before the specified date,
+#'   in YYYY-MM-DD format.
 #'
 #' @return A data frame containing the vaccinations data. Includes
 #'   a `province` variable if data is split by province, and a `hr_uid` variable
@@ -135,8 +138,8 @@ get_vaccination_data <- function(type = c("summary", "reports"),
     # Getting reports for each region sends too many requests to the API
     if (split == "region") {
       stop(paste(
-        "For `type` = 'reports', only ",
-        "`split` = 'overall' and 'province' are available."
+        "For `type` = 'reports', only `split` = 'overall' and 'province'",
+        "are available."
       ))
     }
 

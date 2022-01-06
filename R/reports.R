@@ -19,9 +19,12 @@
 #' @param fill_dates When TRUE, the response fills in any missing dates with
 #'   blank entries.
 #' @param stat Returns only the specified statistics, e.g. "cases".
-#' @param date Returns reports from only the specified date.
-#' @param after Returns reports from only on or after the specified date.
-#' @param before Returns reports from only on or before the specified date.
+#' @param date Returns reports from only the specified date,
+#'   in YYYY-MM-DD format.
+#' @param after Returns reports from only on or after the specified date,
+#'   in YYYY-MM-DD format.
+#' @param before Returns reports from only on or before the specified date,
+#'   in YYYY-MM-DD format.
 #'
 #' @return A data frame containing the reports data, one row per day. Includes
 #'   a `province` variable if data is split by province, and a `hr_uid` variable
@@ -65,14 +68,7 @@ get_reports <- function(split = c("overall", "province"),
   }
 
   if (!is.null(province)) {
-    province <- match.arg(
-      toupper(province),
-      choices = c(
-        "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE",
-        "QC", "SK", "YT"
-      ),
-      several.ok = TRUE
-    )
+    province <- match.arg(toupper(province), province_codes, several.ok = TRUE)
 
     reports <- purrr::map_dfr(
       province,
