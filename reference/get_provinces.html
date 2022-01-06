@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">canadacovid</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.1</span>
       </span>
     </div>
 
@@ -50,9 +50,16 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_provinces</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_provinces</span><span class="op">(</span>geo_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>geo_only</dt>
+<dd><p>Logical, indicating if only provinces/territories should be
+returned. If FALSE, also returned non-geographic entities like
+Repatriated Canadians and the Federal Allocation for vaccinations.</p></dd>
+</dl></div>
     <div id="value">
     <h2>Value</h2>
     <p>A data frame with a row per province/territory.</p>
@@ -62,6 +69,24 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
 <span class="r-in"><span class="fu">get_provinces</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 10</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       id code  name           population   area    gdp geographic data_status   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 ON    Ontario          14<span style="text-decoration: underline;">826</span>276 9.18<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">857</span>384 TRUE       Reported      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     2 QC    Quebec            8<span style="text-decoration: underline;">604</span>495 1.36<span style="color: #949494;">e</span>6 <span style="text-decoration: underline;">439</span>375 TRUE       In progress   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     3 NS    Nova Scotia        <span style="text-decoration: underline;">992</span>055 5.33<span style="color: #949494;">e</span>4  <span style="text-decoration: underline;">44</span>354 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 NB    New Brunswick      <span style="text-decoration: underline;">789</span>225 7.14<span style="color: #949494;">e</span>4  <span style="text-decoration: underline;">36</span>966 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 MB    Manitoba          1<span style="text-decoration: underline;">383</span>765 5.54<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">72</span>688 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 BC    British Colum…    5<span style="text-decoration: underline;">214</span>805 9.25<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">295</span>401 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 PE    Prince Edward…     <span style="text-decoration: underline;">164</span>318 5.66<span style="color: #949494;">e</span>3   <span style="text-decoration: underline;">6</span>994 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 SK    Saskatchewan      1<span style="text-decoration: underline;">179</span>844 5.92<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">80</span>679 TRUE       Reported      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 AB    Alberta           4<span style="text-decoration: underline;">442</span>879 6.42<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">344</span>812 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 NL    Newfoundland …     <span style="text-decoration: underline;">520</span>553 3.74<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">33</span>241 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    11 NT    Northwest Ter…      <span style="text-decoration: underline;">45</span>504 1.18<span style="color: #949494;">e</span>6   <span style="text-decoration: underline;">4</span>730 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    12 YT    Yukon               <span style="text-decoration: underline;">42</span>986 4.74<span style="color: #949494;">e</span>5   <span style="text-decoration: underline;">3</span>046 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>    13 NU    Nunavut             <span style="text-decoration: underline;">39</span>403 1.94<span style="color: #949494;">e</span>6   <span style="text-decoration: underline;">3</span>421 TRUE       Waiting for r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 2 more variables: updated_at &lt;dttm&gt;, density &lt;dbl&gt;</span></span>
+<span class="r-in"><span class="fu">get_provinces</span><span class="op">(</span>geo_only <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 10</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       id code  name          population    area    gdp geographic data_status   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
@@ -82,7 +107,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>    15 FA    Federal Allo…         <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>     <span style="color: #BB0000;">NA</span> FALSE      <span style="color: #949494;">""</span>            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>    16 NFR   National Fed…         <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>     <span style="color: #BB0000;">NA</span> FALSE      <span style="color: #949494;">""</span>            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 2 more variables: updated_at &lt;dttm&gt;, density &lt;dbl&gt;</span></span>
-<span class="r-in"></span>
 </code></pre></div>
     </div>
   </div>
