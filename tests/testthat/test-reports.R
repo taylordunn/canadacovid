@@ -42,9 +42,9 @@ test_that("get_reports works", {
                     "change_criticals", "total_criticals"))
 
   request_sleep()
-  report_2021_07_20 <- get_reports(province = "MB", date = "2021-07-20")
-  expect_equal(report_2021_07_20$date, as.Date("2021-07-20"))
-  expect_equal(report_2021_07_20$province, "MB")
+  report_20210720 <- get_reports(province = "MB", date = "2021-07-20")
+  expect_equal(report_20210720$date, as.Date("2021-07-20"))
+  expect_equal(report_20210720$province, "MB")
 
   request_sleep()
   report_date_range <- get_reports(region = 3570,
