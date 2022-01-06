@@ -13,7 +13,8 @@ get_subregions(subregion_code = NULL)
 A data frame with a row per sub-region.
 }
 \description{
-Get sub-regions
+Returns a list of sub-regions in the COVID-19 tracker.
+By default, returns all 805 sub-regions.
 }
 \examples{
 

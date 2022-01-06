@@ -41,5 +41,4 @@ https://api.covid19tracker.ca/docs/1.0/vaccinations.
 get_subregion_vaccination_data()
 get_subregion_vaccination_data("recent")
 get_subregion_vaccination_data("all", subregion_code = c("ON382", "SK007"))
-
 }

@@ -23,6 +23,10 @@ test_that("get_vaccination_data works", {
   vaccination_data_ns_pe <- get_vaccination_data(type = "reports",
                                                  province = c("NS", "pe"))
   expect_equal(unique(vaccination_data_ns_pe$province), c("NS", "PE"))
+
+  request_sleep()
+  expect_equal(nrow(vaccination_data_ns_pe),
+               nrow(get_reports(province = c("NS", "pe"))))
 })
 
 test_that("get_subregion_vaccination_data works", {

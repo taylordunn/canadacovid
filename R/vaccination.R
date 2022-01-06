@@ -28,7 +28,6 @@
 #' get_subregion_vaccination_data()
 #' get_subregion_vaccination_data("recent")
 #' get_subregion_vaccination_data("all", subregion_code = c("ON382", "SK007"))
-#'
 #' @importFrom dplyr bind_cols bind_rows mutate
 #' @importFrom purrr map_dfr
 #' @importFrom tidyselect matches
@@ -117,9 +116,9 @@ get_subregion_vaccination_data <- function(dates = c("current", "recent", "all")
 #'
 #' get_vaccination_data()
 #' get_vaccination_data(split = "province")
-#' get_vaccination_data()
-#' get_vaccination_data()
-#' get_vaccination_data()
+#' get_vaccination_data(type = "reports", split = "overall")
+#' get_vaccination_data(type = "reports", split = "overall",
+#'                      date = "2021-12-25")
 #' @importFrom dplyr select
 #' @importFrom tidyselect matches
 get_vaccination_data <- function(type = c("summary", "reports"),
@@ -135,12 +134,16 @@ get_vaccination_data <- function(type = c("summary", "reports"),
   } else {
     # Getting reports for each region sends too many requests to the API
     if (split == "region") {
-      stop(paste("For `type` = 'reports', only ",
-                 "`split` = 'overall' and 'province' are available."))
+      stop(paste(
+        "For `type` = 'reports', only ",
+        "`split` = 'overall' and 'province' are available."
+      ))
     }
 
-    vaccination_data <- get_reports(split, province, region, fill_dates, stat,
-                                    date, after, before)
+    vaccination_data <- get_reports(
+      split, province, region, fill_dates, stat,
+      date, after, before
+    )
   }
 
   vaccination_data %>%

@@ -64,7 +64,7 @@ codes (e.g. "1204") to return specific health regions.
 
 get_vaccination_data()
 get_vaccination_data(split = "province")
-get_vaccination_data()
-get_vaccination_data()
-get_vaccination_data()
+get_vaccination_data(type = "reports", split = "overall")
+get_vaccination_data(type = "reports", split = "overall",
+                     date = "2021-12-25")
 }
