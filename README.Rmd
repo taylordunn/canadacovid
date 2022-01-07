@@ -69,3 +69,6 @@ reports_ns_fatalities_2021 <-
 glimpse(reports_ns_fatalities_2021)
 ```
 
+## To-do
+
+* Consider adding `memoise` functionality to avoid repeated API requests.
