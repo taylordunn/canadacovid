@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/404.html</loc>
   </url>
   <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/CONTRIBUTING.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/SUPPORT.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/SUPPORT.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/index.html</loc>
   </url>
   <url>
-    <loc>/reference/get_content_parsed.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_content_parsed.html</loc>
   </url>
   <url>
-    <loc>/reference/get_provinces.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_provinces.html</loc>
   </url>
   <url>
-    <loc>/reference/get_regions.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_regions.html</loc>
   </url>
   <url>
-    <loc>/reference/get_reports.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_reports.html</loc>
   </url>
   <url>
-    <loc>/reference/get_subregion_vaccination_data.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_subregion_vaccination_data.html</loc>
   </url>
   <url>
-    <loc>/reference/get_subregions.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_subregions.html</loc>
   </url>
   <url>
-    <loc>/reference/get_summary.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_summary.html</loc>
   </url>
   <url>
-    <loc>/reference/get_vaccination_data.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_vaccination_data.html</loc>
   </url>
   <url>
-    <loc>/reference/get_vaccine_age_groups.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/get_vaccine_age_groups.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/pipe.html</loc>
+    <loc>https://taylordunn.github.io/canadacovid/reference/pipe.html</loc>
   </url>
 </urlset>
