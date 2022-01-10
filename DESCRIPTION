@@ -6,7 +6,7 @@ Authors@R:
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8042-1611"))
 Description: Provides R functions to GET data from the Canadian COVID-19 tracker
-    API.
+    API <https:https://api.covid19tracker.ca/>.
 License: MIT + file LICENSE
 Suggests: 
     covr,
