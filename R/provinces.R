@@ -33,9 +33,8 @@ get_provinces <- function(geo_only = TRUE) {
       # The numbers after the decimal ".000000" are microseconds, which will
       #  always (I assume) be rounded to all zeroes
       # The "Z" character at the end indicates the UTC timezone
-      #updated_at = as.POSIXct(.data$updated_at,)
       updated_at = strptime(.data$updated_at,
-                            format = "%Y-%m-%dT%H:%M:%OS6Z",
+                            format = "%Y-%m-%dT%H:%M:%OSZ",
                             tz = "UTC")
     )
 }

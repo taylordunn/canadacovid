@@ -6,6 +6,7 @@ test_that("get_provinces", {
   expect_setequal(provinces$code,
                   c("ON", "QC", "NS", "NB", "MB", "BC", "PE", "SK", "AB",
                     "NL", "NT", "YT", "NU"))
+  expect_false(any(is.na(provinces$updated_at)))
 
   request_sleep()
   provinces_geo_false <- get_provinces(geo_only = FALSE)
