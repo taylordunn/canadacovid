@@ -72,7 +72,8 @@ get_subregion_vaccination_data <- function(dates = c("current", "recent", "all")
       dplyr::across(tidyselect::matches("^total"), as.integer),
       dplyr::across(tidyselect::matches("^percent"), as.numeric),
       dplyr::across(tidyselect::matches("date"), as.Date),
-      dplyr::across(tidyselect::matches("last_updated"), as.POSIXct)
+      dplyr::across(tidyselect::matches("last_updated"),
+                    ~ as.POSIXct(.x, tz = "America/Regina"))
     )
 }
 
