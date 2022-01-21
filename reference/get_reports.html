@@ -120,10 +120,6 @@ if data is split by health region.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
 <span class="r-in"><span class="fu">get_reports</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Called from: get_reports()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> debug: reports %&gt;% dplyr::mutate(dplyr::across(tidyselect::matches("^change|total"), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     as.integer), dplyr::across(tidyselect::matches("^date"), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     as.Date), last_updated = as.POSIXct(.data$last_updated, tz = "America/Regina"))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 727 × 22</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        date       change_cases change_fatalities change_tests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
