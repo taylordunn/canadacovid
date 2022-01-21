@@ -101,5 +101,5 @@ get_vaccine_age_groups <- function(split = c("overall", "province"),
       )
     ) %>%
     tidyr::unnest(.data$data) %>%
-    dplyr::mutate(dplyr::across(tidyselect::matches("date"), as.Date))
+    dplyr::mutate(dplyr::across(tidyselect::matches("^date"), as.Date))
 }

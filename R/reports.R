@@ -101,12 +101,13 @@ get_reports <- function(split = c("overall", "province"),
       content_parsed["last_updated"],
       dplyr::bind_rows(content_parsed$data)
     )
+    browser()
   }
 
   reports %>%
     dplyr::mutate(
       dplyr::across(tidyselect::matches("^change|total"), as.integer),
-      dplyr::across(tidyselect::matches("date"), as.Date),
+      dplyr::across(tidyselect::matches("^date"), as.Date),
       last_updated = as.POSIXct(.data$last_updated,
                                 tz = "America/Regina")
     )

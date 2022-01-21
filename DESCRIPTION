@@ -1,6 +1,6 @@
 Package: canadacovid
 Title: API Wrapper for the Canadian COVID-19 Tracker
-Version: 0.3.2
+Version: 0.3.3
 Authors@R: 
     person("Taylor", "Dunn", email = "t.dunn19@gmail.com",
            role = c("aut", "cre"),
