@@ -29,4 +29,5 @@ Imports:
     tibble,
     purrr,
     tidyr,
-    utils
+    utils,
+    lubridate

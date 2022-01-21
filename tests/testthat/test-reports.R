@@ -15,6 +15,17 @@ test_that("get_reports works", {
   expect_equal(max(reports_province$date), max(reports_overall$date))
 
   request_sleep()
+  provinces <- get_provinces()
+  # Timestamps `updated_at` from provinces, and `last_updated` from reports
+  #  should be equal
+  expect_mapequal(
+    provinces %>% dplyr::pull(updated_at, name = code),
+    reports_province %>%
+      dplyr::distinct(province, last_updated) %>%
+      dplyr::pull(last_updated, name = province)
+  )
+
+  request_sleep()
   reports_ns_nb_nv <- get_reports(province = c("NS", "nb", "nU", "test"))
   expect_equal(
     unique(reports_ns_nb_nv$province), c("NS", "NB", "NU")
@@ -51,4 +62,5 @@ test_that("get_reports works", {
                                    after = "2021-10-28", before = "2021-11-02")
   expect_equal(min(report_date_range$date), as.Date("2021-10-28"))
   expect_equal(max(report_date_range$date), as.Date("2021-11-02"))
+
 })

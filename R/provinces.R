@@ -13,6 +13,7 @@
 #' get_provinces(geo_only = FALSE)
 #' @importFrom dplyr bind_rows mutate
 #' @importFrom rlang .data
+#' @importFrom lubridate with_tz
 get_provinces <- function(geo_only = TRUE) {
   base_url <- "https://api.covid19tracker.ca/provinces"
   if (geo_only) {
@@ -35,6 +36,10 @@ get_provinces <- function(geo_only = TRUE) {
       # The "Z" character at the end indicates the UTC timezone
       updated_at = strptime(.data$updated_at,
                             format = "%Y-%m-%dT%H:%M:%OSZ",
-                            tz = "UTC")
+                            tz = "UTC") %>%
+        # In order to be consistent with timestamps from other tables,
+        #  convert to America/Regina
+        lubridate::with_tz(tz = "America/Regina") %>%
+        as.POSIXct()
     )
 }
