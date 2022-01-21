@@ -27,6 +27,12 @@ To see how the package was developed, see [this post](https://tdunn.ca/posts/202
 
 ## Installation
 
+Install `canadacovid` from CRAN:
+
+```r
+install.packages("canadacovid")
+```
+
 You can install the development version of `canadacovid` from GitHub:
 
 ``` r

@@ -21,6 +21,12 @@ post](https://tdunn.ca/posts/2021-12-30-canada-covid-19-data-in-r-creating-a-pac
 
 ## Installation
 
+Install `canadacovid` from CRAN:
+
+``` r
+install.packages("canadacovid")
+```
+
 You can install the development version of `canadacovid` from GitHub:
 
 ``` r
@@ -40,28 +46,28 @@ summary_overall <- get_summary()
 glimpse(summary_overall)
 #> Rows: 1
 #> Columns: 22
-#> $ last_updated                <dttm> 2022-01-07 20:00:00
-#> $ latest_date                 <date> 2022-01-08
-#> $ change_cases                <int> 30234
-#> $ change_fatalities           <int> 74
-#> $ change_tests                <int> 59210
-#> $ change_hospitalizations     <int> 294
-#> $ change_criticals            <int> 65
-#> $ change_recoveries           <int> 12308
-#> $ change_vaccinations         <int> 187135
-#> $ change_vaccinated           <int> 10104
-#> $ change_boosters_1           <int> 164668
+#> $ last_updated                <dttm> 2022-01-20 18:10:02
+#> $ latest_date                 <date> 2022-01-20
+#> $ change_cases                <int> 23167
+#> $ change_fatalities           <int> 210
+#> $ change_tests                <int> 81335
+#> $ change_hospitalizations     <int> -6
+#> $ change_criticals            <int> 8
+#> $ change_recoveries           <int> 30579
+#> $ change_vaccinations         <int> 198559
+#> $ change_vaccinated           <int> 14000
+#> $ change_boosters_1           <int> 187385
 #> $ change_vaccines_distributed <int> 0
-#> $ total_cases                 <int> 2511473
-#> $ total_fatalities            <int> 30742
-#> $ total_tests                 <int> 54305056
-#> $ total_hospitalizations      <int> 6275
-#> $ total_criticals             <int> 858
-#> $ total_recoveries            <int> 2075298
-#> $ total_vaccinations          <int> 70985386
-#> $ total_vaccinated            <int> 29514160
-#> $ total_boosters_1            <int> 9589957
-#> $ total_vaccines_distributed  <int> 80222864
+#> $ total_cases                 <int> 2866146
+#> $ total_fatalities            <int> 32217
+#> $ total_tests                 <int> 55885939
+#> $ total_hospitalizations      <int> 10609
+#> $ total_criticals             <int> 1203
+#> $ total_recoveries            <int> 2520615
+#> $ total_vaccinations          <int> 75105874
+#> $ total_vaccinated            <int> 29729902
+#> $ total_boosters_1            <int> 13229157
+#> $ total_vaccines_distributed  <int> 84909134
 ```
 
 By default, this returns the aggregate data over all of Canada. Provide
@@ -72,39 +78,43 @@ summary_province <- get_summary(split = "province")
 glimpse(summary_province)
 #> Rows: 13
 #> Columns: 23
-#> $ last_updated                <dttm> 2022-01-07 20:00:00, 2022-01-07 20:00:00,~
+#> $ last_updated                <dttm> 2022-01-20 18:10:02, 2022-01-20 18:10:02,~
 #> $ province                    <chr> "ON", "QC", "NS", "NB", "MB", "BC", "PE", ~
-#> $ date                        <date> 2022-01-08, 2022-01-08, 2022-01-08, 2022-~
-#> $ change_cases                <int> 13362, 15928, 0, 0, 0, 0, 0, 944, 0, 0, 0,~
-#> $ change_fatalities           <int> 30, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-#> $ change_tests                <int> 55700, 0, 0, 0, 0, 0, 0, 3510, 0, 0, 0, 0,~
-#> $ change_hospitalizations     <int> 122, 163, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0
-#> $ change_criticals            <int> 47, 16, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0
-#> $ change_recoveries           <int> 12007, 0, 0, 0, 0, 0, 0, 301, 0, 0, 0, 0, 0
-#> $ change_vaccinations         <int> 184101, 0, 0, 0, 0, 0, 0, 3034, 0, 0, 0, 0~
-#> $ change_vaccinated           <int> 8168, 0, 0, 0, 0, 0, 0, 1936, 0, 0, 0, 0, 0
-#> $ change_boosters_1           <int> 164668, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+#> $ date                        <chr> "2022-01-20", "2022-01-20", "2022-01-20", ~
+#> $ change_cases                <int> 7757, 6528, 696, 488, 850, 2150, 0, 1171, ~
+#> $ change_fatalities           <int> 75, 98, 4, 3, 7, 15, 0, 0, 8, 0, 0, 0, 0
+#> $ change_tests                <int> 42907, 0, 4459, 4580, 2450, 12274, 0, 3513~
+#> $ change_hospitalizations     <int> -71, -14, 2, 1, 34, -4, 0, 16, 30, 0, 0, 0~
+#> $ change_criticals            <int> 5, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0
+#> $ change_recoveries           <int> 12578, 0, 0, 392, 6809, 3174, 0, 1092, 653~
+#> $ change_vaccinations         <int> 104845, 0, 18072, 10130, 8531, 59042, 0, 2~
+#> $ change_vaccinated           <int> 9205, 0, 306, 307, 913, 2001, 0, 1263, 5, ~
+#> $ change_boosters_1           <int> 86274, 0, 17233, 9159, 6739, 54080, 0, 0, ~
 #> $ change_vaccines_distributed <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-#> $ total_cases                 <int> 866632, 728286, 23879, 19857, 94850, 27687~
-#> $ total_fatalities            <int> 10345, 11917, 112, 170, 1408, 2439, 0, 961~
-#> $ total_tests                 <int> 21725105, 15246492, 1606541, 634368, 13111~
-#> $ total_hospitalizations      <int> 2594, 2296, 48, 69, 297, 349, 0, 114, 504,~
-#> $ total_criticals             <int> 385, 245, 7, 17, 34, 93, 0, 13, 64, 0, 0, ~
-#> $ total_recoveries            <int> 719739, 577427, 17152, 12127, 68847, 24019~
-#> $ total_vaccinations          <int> 28324152, 15762212, 1842770, 1481051, 2548~
-#> $ total_vaccinated            <int> 11462390, 6700494, 796012, 623628, 1041044~
-#> $ total_boosters_1            <int> 4571616, 1742133, 180694, 177530, 373869, ~
-#> $ total_vaccines_distributed  <int> 32296511, 16948499, 2063380, 1681965, 2987~
+#> $ total_cases                 <int> 977194, 818947, 31874, 24489, 113196, 3057~
+#> $ total_fatalities            <int> 10801, 12639, 128, 199, 1485, 2520, 2, 961~
+#> $ total_tests                 <int> 22288866, 15682022, 1674063, 666919, 13574~
+#> $ total_hospitalizations      <int> 4061, 3411, 85, 124, 665, 891, 8, 215, 113~
+#> $ total_criticals             <int> 594, 285, 12, 12, 50, 115, 4, 23, 108, 0, ~
+#> $ total_recoveries            <int> 887023, 747819, 17152, 19899, 75969, 26576~
+#> $ total_vaccinations          <int> 29769719, 16953912, 1998064, 1575232, 2681~
+#> $ total_vaccinated            <int> 11570076, 6734670, 798609, 626997, 1048824~
+#> $ total_boosters_1            <int> 5793578, 2844797, 327601, 261910, 488289, ~
+#> $ total_vaccines_distributed  <int> 33390981, 19822969, 2243162, 1756685, 2987~
 ```
 
 Day-by-day reports are retrieved with `get_reports`:
 
 ``` r
 reports_overall <- get_reports()
+#> Called from: get_reports()
+#> debug: reports %>% dplyr::mutate(dplyr::across(tidyselect::matches("^change|total"), 
+#>     as.integer), dplyr::across(tidyselect::matches("^date"), 
+#>     as.Date), last_updated = as.POSIXct(.data$last_updated, tz = "America/Regina"))
 glimpse(reports_overall)
-#> Rows: 715
+#> Rows: 727
 #> Columns: 22
-#> $ last_updated                <dttm> 2022-01-07 20:00:00, 2022-01-07 20:00:00,~
+#> $ last_updated                <dttm> 2022-01-20 18:10:02, 2022-01-20 18:10:02,~
 #> $ date                        <date> 2020-01-25, 2020-01-26, 2020-01-27, 2020-~
 #> $ change_cases                <int> 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, ~
 #> $ change_fatalities           <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
@@ -139,7 +149,7 @@ glimpse(reports_ns_fatalities_2021)
 #> Rows: 365
 #> Columns: 5
 #> $ province          <chr> "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS"~
-#> $ last_updated      <dttm> 2022-01-07 20:00:00, 2022-01-07 20:00:00, 2022-01-0~
+#> $ last_updated      <dttm> 2022-01-20 14:12:04, 2022-01-20 14:12:04, 2022-01-2~
 #> $ date              <date> 2021-01-01, 2021-01-02, 2021-01-03, 2021-01-04, 202~
 #> $ change_fatalities <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 #> $ total_fatalities  <int> 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, ~
