@@ -101,7 +101,6 @@ get_reports <- function(split = c("overall", "province"),
       content_parsed["last_updated"],
       dplyr::bind_rows(content_parsed$data)
     )
-    browser()
   }
 
   reports %>%
