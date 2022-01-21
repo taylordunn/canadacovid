@@ -18,7 +18,7 @@ combined), by "province" (one row per province/territory) or by "region"
     
     <a class="navbar-brand me-2" href="../index.html">canadacovid</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +28,9 @@ combined), by "province" (one row per province/territory) or by "region"
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -81,7 +84,7 @@ data is split.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 22</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   last_updated        latest_date change_cases change_fatalities change_tests</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> 2022-01-13         <span style="text-decoration: underline;">31</span>692               108       <span style="text-decoration: underline;">105</span>970</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> 2022-01-20         <span style="text-decoration: underline;">23</span>167               210        <span style="text-decoration: underline;">81</span>335</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 17 more variables: change_hospitalizations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_criticals &lt;int&gt;, change_recoveries &lt;int&gt;, change_vaccinations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccinated &lt;int&gt;, change_boosters_1 &lt;int&gt;,</span></span>
@@ -91,22 +94,22 @@ data is split.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;, …</span></span>
 <span class="r-in"><span class="fu">get_summary</span><span class="op">(</span><span class="st">"province"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 23</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        province date       change_cases change_fatalities</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> ON       2022-01-13         <span style="text-decoration: underline;">9</span>909                35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> QC       2022-01-13         <span style="text-decoration: underline;">8</span>793                45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> NS       2022-01-13          542                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> NB       2022-01-13          304                 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> MB       2022-01-13         <span style="text-decoration: underline;">1</span>221                 9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> BC       2022-01-13         <span style="text-decoration: underline;">2</span>554                 7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> PE       2022-01-13          534                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> SK       2022-01-13          951                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> AB       2022-01-13         <span style="text-decoration: underline;">6</span>010                 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> NL       2022-01-13          686                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> NT       2022-01-13          120                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> YT       2022-01-13           56                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 2022-01-13 <span style="color: #949494;">00:00:00</span> NU       2022-01-13           12                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 18 more variables: change_tests &lt;int&gt;, change_hospitalizations &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        province date  change_cases change_fataliti… change_tests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> ON       2022…         <span style="text-decoration: underline;">7</span>757               75        <span style="text-decoration: underline;">42</span>907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> QC       2022…         <span style="text-decoration: underline;">6</span>528               98            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> NS       2022…          696                4         <span style="text-decoration: underline;">4</span>459</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> NB       2022…          488                3         <span style="text-decoration: underline;">4</span>580</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> MB       2022…          850                7         <span style="text-decoration: underline;">2</span>450</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> BC       2022…         <span style="text-decoration: underline;">2</span>150               15        <span style="text-decoration: underline;">12</span>274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> PE       2022…            0                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> SK       2022…         <span style="text-decoration: underline;">1</span>171                0         <span style="text-decoration: underline;">3</span>513</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> AB       2022…         <span style="text-decoration: underline;">3</span>527                8        <span style="text-decoration: underline;">11</span>152</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> NL       2022…            0                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> NT       2022…            0                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> YT       2022…            0                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 2022-01-20 <span style="color: #949494;">18:10:02</span> NU       2022…            0                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 17 more variables: change_hospitalizations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_criticals &lt;int&gt;, change_recoveries &lt;int&gt;, change_vaccinations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccinated &lt;int&gt;, change_boosters_1 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccines_distributed &lt;int&gt;, total_cases &lt;int&gt;,</span></span>
@@ -115,24 +118,24 @@ data is split.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;, …</span></span>
 <span class="r-in"><span class="fu">get_summary</span><span class="op">(</span><span class="st">"region"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 92 × 21</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        hr_uid date       change_cases change_fatalities</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>526 2022-01-13           89                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>527 2022-01-13          100                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>530 2022-01-13          968                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>533 2022-01-13           54                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>534 2022-01-13            0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>535 2022-01-13           93                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>536 2022-01-13          600                 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>537 2022-01-13          405                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>538 2022-01-13           <span style="color: #BB0000;">NA</span>                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-01-13 <span style="color: #949494;">00:00:00</span>   <span style="text-decoration: underline;">3</span>539 2022-01-13           88                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 82 more rows, and 16 more variables: change_hospitalizations &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        hr_uid date    change_cases change_fataliti… change_tests</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">1</span>011 2022-0…          358                2         <span style="text-decoration: underline;">1</span>881</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">1</span>012 2022-0…           65               -<span style="color: #BB0000;">2</span>          242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">1</span>013 2022-0…           74                0          278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">1</span>014 2022-0…           21                0           48</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">1</span>100 2022-0…           <span style="color: #BB0000;">NA</span>               <span style="color: #BB0000;">NA</span>           <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">6</span>101 2022-0…          138                0           <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">6</span>001 2022-0…           35                0           93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">6</span>201 2022-0…           20                0            0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">3</span>526 2022-0…           48                0           <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-01-20 <span style="color: #949494;">18:10:02</span>   <span style="text-decoration: underline;">3</span>527 2022-0…           94                1           <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 82 more rows, and 15 more variables: change_hospitalizations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_recoveries &lt;int&gt;, total_cases &lt;int&gt;, total_fatalities &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_tests &lt;int&gt;, total_hospitalizations &lt;int&gt;, total_criticals &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_recoveries &lt;int&gt;, total_vaccinations &lt;int&gt;, total_vaccinated &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_boosters_1 &lt;int&gt;, change_criticals &lt;int&gt;, change_tests &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccinations &lt;int&gt;, change_vaccinated &lt;int&gt;, change_boosters_1 &lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_boosters_1 &lt;int&gt;, change_vaccinations &lt;int&gt;, change_vaccinated &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_boosters_1 &lt;int&gt;, change_criticals &lt;int&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
