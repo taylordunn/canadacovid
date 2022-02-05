@@ -49,6 +49,7 @@
 <ul><li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
 <li>Fixed a bug where the <code>last_updated</code> variable was being parsed incorrectly in <code><a href="../reference/get_reports.html">get_reports()</a></code>, <code><a href="../reference/get_summary.html">get_summary()</a></code>, <code><a href="../reference/get_subregion_vaccination_data.html">get_subregion_vaccination_data()</a></code> and <code><a href="../reference/get_vaccine_age_groups.html">get_vaccine_age_groups()</a></code>.</li>
 <li>The <code><a href="../reference/get_provinces.html">get_provinces()</a></code> function now returns <code>updated_at</code> in the CST timezone in order to be consistent with the other tables. To do this, the <code>lubridate</code> package has been added under <code>Imports</code> for the <code>with_tz()</code> function.</li>
+<li>The API now returns two additional variables <code>change_boosters_2</code> and <code>total_boosters_2</code>. Adjusted the tests (<code>test-reports</code>, <code>test-summary</code> and <code>test-vaccination</code>) to account for the new variables.</li>
 </ul></div>
   </main></div>
 
