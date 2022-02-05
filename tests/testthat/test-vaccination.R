@@ -2,17 +2,16 @@ test_that("get_vaccination_data works", {
   request_sleep()
   vaccination_data_summary <- get_vaccination_data()
   expect_equal(nrow(vaccination_data_summary), 1)
-  expect_equal(ncol(vaccination_data_summary), 10)
+  expect_equal(ncol(vaccination_data_summary), 12)
 
   request_sleep()
   vaccination_data_report <- get_vaccination_data(type = "reports")
-  expect_equal(ncol(vaccination_data_report), 10)
+  expect_equal(ncol(vaccination_data_report), 12)
   expect_equal(
     vaccination_data_report$date,
     seq.Date(min(vaccination_data_report$date),
              max(vaccination_data_report$date), by = "day")
   )
-  expect_false(any(is.na(vaccination_data_report)))
 
   request_sleep()
   vaccination_data_summary_region <- get_vaccination_data(split = "region")

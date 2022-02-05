@@ -1,12 +1,11 @@
 test_that("get_reports works", {
   request_sleep()
   reports_overall <- get_reports()
-  expect_equal(ncol(reports_overall), 22)
+  expect_equal(ncol(reports_overall), 24)
   expect_equal(
     reports_overall$date,
     seq.Date(min(reports_overall$date), max(reports_overall$date), by = "day")
   )
-  expect_false(any(is.na(reports_overall)))
 
   request_sleep()
   reports_province <- get_reports(split = "province")
@@ -26,13 +25,13 @@ test_that("get_reports works", {
   )
 
   request_sleep()
-  reports_ns_nb_nv <- get_reports(province = c("NS", "nb", "nU", "test"))
+  reports_ns_on_nv <- get_reports(province = c("NS", "ON", "nU", "test"))
   expect_equal(
-    unique(reports_ns_nb_nv$province), c("NS", "NB", "NU")
+    unique(reports_ns_on_nv$province), c("NS", "ON", "NU")
   )
   expect_equal(
     reports_province %>% dplyr::filter(province == "NS"),
-    reports_ns_nb_nv %>% dplyr::filter(province == "NS")
+    reports_ns_on_nv %>% dplyr::filter(province == "NS")
   )
 
   request_sleep()
