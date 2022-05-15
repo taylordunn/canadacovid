@@ -135,7 +135,7 @@ if data is split by health region.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   last_updated        latest_date change_vaccinations change_vaccinated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                <span style="text-decoration: underline;">66</span>029             <span style="text-decoration: underline;">17</span>515</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                <span style="text-decoration: underline;">72</span>858              <span style="text-decoration: underline;">2</span>320</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 8 more variables: change_boosters_1 &lt;int&gt;, change_boosters_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccines_distributed &lt;int&gt;, total_vaccinations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;, total_boosters_2 &lt;int&gt;,</span></span>
@@ -144,48 +144,47 @@ if data is split by health region.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 13</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    province last_updated        date       change_vaccinations change_vaccinated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ON       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05               <span style="text-decoration: underline;">66</span>029             <span style="text-decoration: underline;">17</span>515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> QC       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> NS       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> NB       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> MB       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BC       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> PE       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> SK       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> AB       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> NL       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> NT       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> YT       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> NU       2022-02-05 <span style="color: #949494;">12:35:02</span> 2022-02-05                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ON       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12               <span style="text-decoration: underline;">29</span>173              <span style="text-decoration: underline;">1</span>380</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> QC       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12               <span style="text-decoration: underline;">19</span>893               465</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> NS       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> NB       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> MB       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BC       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> PE       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> SK       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12               <span style="text-decoration: underline;">23</span>792               475</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> AB       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> NL       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> NT       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> YT       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> NU       2022-05-13 <span style="color: #949494;">00:21:50</span> 2022-05-12                   0                 0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 8 more variables: change_boosters_1 &lt;int&gt;, change_boosters_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccines_distributed &lt;int&gt;, total_vaccinations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;, total_boosters_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccines_distributed &lt;int&gt;</span></span>
 <span class="r-in"><span class="fu">get_vaccination_data</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"reports"</span>, split <span class="op">=</span> <span class="st">"overall"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 743 × 12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 839 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        date       change_vaccinations change_vaccinated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-25                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-26                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-27                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-28                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-29                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-30                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-01-31                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-02-01                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-02-02                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2020-02-03                   0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 733 more rows, and 8 more variables: change_boosters_1 &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccines_distributed &lt;int&gt;, total_vaccinations &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccines_distributed &lt;int&gt;, change_boosters_2 &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_boosters_2 &lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-25                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-26                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-27                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-28                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-29                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-30                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-01-31                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-02-01                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-02-02                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2020-02-03                   0                 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 829 more rows, and 8 more variables: change_boosters_1 &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_boosters_2 &lt;int&gt;, change_vaccines_distributed &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinations &lt;int&gt;, total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_boosters_2 &lt;int&gt;, total_vaccines_distributed &lt;int&gt;</span></span>
 <span class="r-in"><span class="fu">get_vaccination_data</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"reports"</span>, split <span class="op">=</span> <span class="st">"overall"</span>,</span>
 <span class="r-in">                     date <span class="op">=</span> <span class="st">"2021-12-25"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   last_updated        date       change_vaccinations change_vaccinated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-02-05 <span style="color: #949494;">12:35:02</span> 2021-12-25               <span style="text-decoration: underline;">92</span>411              <span style="text-decoration: underline;">5</span>049</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2022-05-13 <span style="color: #949494;">00:21:50</span> 2021-12-25              <span style="text-decoration: underline;">116</span>846              <span style="text-decoration: underline;">5</span>687</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 8 more variables: change_boosters_1 &lt;int&gt;, change_boosters_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   change_vaccines_distributed &lt;int&gt;, total_vaccinations &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_vaccinated &lt;int&gt;, total_boosters_1 &lt;int&gt;, total_boosters_2 &lt;int&gt;,</span></span>
@@ -201,7 +200,7 @@ if data is split by health region.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer></div>

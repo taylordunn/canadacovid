@@ -75,7 +75,6 @@
 </h1>
 </div>
 <!-- badges: start -->
-
 <p>The goal of <code>canadacovid</code> is to provide a wrapper around the API service for the <a href="https://covid19tracker.ca/" class="external-link">COVID-19 Tracker Canada</a>. To see how the package was developed, see <a href="https://tdunn.ca/posts/2021-12-30-canada-covid-19-data-in-r-creating-a-package/" class="external-link">this post</a>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -99,90 +98,92 @@
 <span class="va">summary_overall</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary.html">get_summary</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">summary_overall</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 1</span>
-<span class="co">#&gt; Columns: 22</span>
-<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-01-20 18:10:02</span>
-<span class="co">#&gt; $ latest_date                 &lt;date&gt; 2022-01-20</span>
-<span class="co">#&gt; $ change_cases                &lt;int&gt; 23167</span>
-<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 210</span>
-<span class="co">#&gt; $ change_tests                &lt;int&gt; 81335</span>
-<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; -6</span>
-<span class="co">#&gt; $ change_criticals            &lt;int&gt; 8</span>
-<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 30579</span>
-<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 198559</span>
-<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 14000</span>
-<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 187385</span>
+<span class="co">#&gt; Columns: 24</span>
+<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-05-13 00:21:50</span>
+<span class="co">#&gt; $ latest_date                 &lt;date&gt; 2022-05-12</span>
+<span class="co">#&gt; $ change_cases                &lt;int&gt; 3637</span>
+<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 58</span>
+<span class="co">#&gt; $ change_tests                &lt;int&gt; 23459</span>
+<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; -172</span>
+<span class="co">#&gt; $ change_criticals            &lt;int&gt; -7</span>
+<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 2602</span>
+<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 72858</span>
+<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 2320</span>
+<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 6781</span>
+<span class="co">#&gt; $ change_boosters_2           &lt;int&gt; 37530</span>
 <span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0</span>
-<span class="co">#&gt; $ total_cases                 &lt;int&gt; 2866146</span>
-<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 32217</span>
-<span class="co">#&gt; $ total_tests                 &lt;int&gt; 55885939</span>
-<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 10609</span>
-<span class="co">#&gt; $ total_criticals             &lt;int&gt; 1203</span>
-<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 2520615</span>
-<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 75105874</span>
-<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 29729902</span>
-<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 13229157</span>
-<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 84909134</span></code></pre></div>
+<span class="co">#&gt; $ total_cases                 &lt;int&gt; 3792294</span>
+<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 40005</span>
+<span class="co">#&gt; $ total_tests                 &lt;int&gt; 59814813</span>
+<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 6087</span>
+<span class="co">#&gt; $ total_criticals             &lt;int&gt; 383</span>
+<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 3475157</span>
+<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 84713309</span>
+<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 31343697</span>
+<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 18581632</span>
+<span class="co">#&gt; $ total_boosters_2            &lt;int&gt; 2017868</span>
+<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 95355642</span></code></pre></div>
 <p>By default, this returns the aggregate data over all of Canada. Provide a <code>split</code> argument to get a summary by “province” or “region”:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">summary_province</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary.html">get_summary</a></span><span class="op">(</span>split <span class="op">=</span> <span class="st">"province"</span><span class="op">)</span>
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">summary_province</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 13</span>
-<span class="co">#&gt; Columns: 23</span>
-<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-01-20 18:10:02, 2022-01-20 18:10:02,~</span>
-<span class="co">#&gt; $ province                    &lt;chr&gt; "ON", "QC", "NS", "NB", "MB", "BC", "PE", ~</span>
-<span class="co">#&gt; $ date                        &lt;chr&gt; "2022-01-20", "2022-01-20", "2022-01-20", ~</span>
-<span class="co">#&gt; $ change_cases                &lt;int&gt; 7757, 6528, 696, 488, 850, 2150, 0, 1171, ~</span>
-<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 75, 98, 4, 3, 7, 15, 0, 0, 8, 0, 0, 0, 0</span>
-<span class="co">#&gt; $ change_tests                &lt;int&gt; 42907, 0, 4459, 4580, 2450, 12274, 0, 3513~</span>
-<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; -71, -14, 2, 1, 34, -4, 0, 16, 30, 0, 0, 0~</span>
-<span class="co">#&gt; $ change_criticals            &lt;int&gt; 5, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0</span>
-<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 12578, 0, 0, 392, 6809, 3174, 0, 1092, 653~</span>
-<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 104845, 0, 18072, 10130, 8531, 59042, 0, 2~</span>
-<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 9205, 0, 306, 307, 913, 2001, 0, 1263, 5, ~</span>
-<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 86274, 0, 17233, 9159, 6739, 54080, 0, 0, ~</span>
+<span class="co">#&gt; Columns: 25</span>
+<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-05-13 00:21:50, 2022-05-13 00:21:50,…</span>
+<span class="co">#&gt; $ province                    &lt;chr&gt; "ON", "QC", "NS", "NB", "MB", "BC", "PE", …</span>
+<span class="co">#&gt; $ date                        &lt;chr&gt; "2022-05-12", "2022-05-12", "2022-05-12", …</span>
+<span class="co">#&gt; $ change_cases                &lt;int&gt; 2160, 767, 0, 0, 0, 0, 0, 710, 0, 0, 0, 0,…</span>
+<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 14, 25, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_tests                &lt;int&gt; 16360, 0, 0, 0, 0, 0, 0, 7099, 0, 0, 0, 0,…</span>
+<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; -77, -26, 0, 0, 0, 0, 0, -69, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_criticals            &lt;int&gt; -1, -2, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 2602, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
+<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 29173, 19893, 0, 0, 0, 0, 0, 23792, 0, 0, …</span>
+<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 1380, 465, 0, 0, 0, 0, 0, 475, 0, 0, 0, 0,…</span>
+<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 2771, 2397, 0, 0, 0, 0, 0, 1613, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_boosters_2           &lt;int&gt; 0, 16761, 0, 0, 0, 0, 0, 20769, 0, 0, 0, 0…</span>
 <span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
-<span class="co">#&gt; $ total_cases                 &lt;int&gt; 977194, 818947, 31874, 24489, 113196, 3057~</span>
-<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 10801, 12639, 128, 199, 1485, 2520, 2, 961~</span>
-<span class="co">#&gt; $ total_tests                 &lt;int&gt; 22288866, 15682022, 1674063, 666919, 13574~</span>
-<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 4061, 3411, 85, 124, 665, 891, 8, 215, 113~</span>
-<span class="co">#&gt; $ total_criticals             &lt;int&gt; 594, 285, 12, 12, 50, 115, 4, 23, 108, 0, ~</span>
-<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 887023, 747819, 17152, 19899, 75969, 26576~</span>
-<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 29769719, 16953912, 1998064, 1575232, 2681~</span>
-<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 11570076, 6734670, 798609, 626997, 1048824~</span>
-<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 5793578, 2844797, 327601, 261910, 488289, ~</span>
-<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 33390981, 19822969, 2243162, 1756685, 2987~</span></code></pre></div>
+<span class="co">#&gt; $ total_cases                 &lt;int&gt; 1281360, 1055277, 78174, 63490, 140931, 36…</span>
+<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 13034, 15226, 336, 406, 1792, 3226, 26, 13…</span>
+<span class="co">#&gt; $ total_tests                 &lt;int&gt; 24232283, 16733572, 1777959, 782596, 14783…</span>
+<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 1451, 1821, 66, 47, 579, 550, 13, 321, 122…</span>
+<span class="co">#&gt; $ total_criticals             &lt;int&gt; 175, 60, 17, 6, 28, 39, 0, 16, 37, 5, 0, 0…</span>
+<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 1247571, 983050, 43018, 49723, 129338, 307…</span>
+<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 33027991, 20042788, 2235685, 1748729, 2863…</span>
+<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 12182139, 7158529, 842600, 659327, 1108820…</span>
+<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 7337274, 4448891, 503257, 390204, 593160, …</span>
+<span class="co">#&gt; $ total_boosters_2            &lt;int&gt; 790774, 971194, 0, 0, 0, 48479, 0, 86119, …</span>
+<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 36042671, 22682919, 2458152, 2149445, 3736…</span></code></pre></div>
 <p>Day-by-day reports are retrieved with <code>get_reports</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">reports_overall</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_reports.html">get_reports</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Called from: get_reports()</span>
-<span class="co">#&gt; debug: reports %&gt;% dplyr::mutate(dplyr::across(tidyselect::matches("^change|total"), </span>
-<span class="co">#&gt;     as.integer), dplyr::across(tidyselect::matches("^date"), </span>
-<span class="co">#&gt;     as.Date), last_updated = as.POSIXct(.data$last_updated, tz = "America/Regina"))</span>
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">reports_overall</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 727</span>
-<span class="co">#&gt; Columns: 22</span>
-<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-01-20 18:10:02, 2022-01-20 18:10:02,~</span>
-<span class="co">#&gt; $ date                        &lt;date&gt; 2020-01-25, 2020-01-26, 2020-01-27, 2020-~</span>
-<span class="co">#&gt; $ change_cases                &lt;int&gt; 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, ~</span>
-<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_tests                &lt;int&gt; 2, 4, 20, 10, 3, 26, 33, 23, 24, 16, 56, 5~</span>
-<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_criticals            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_cases                 &lt;int&gt; 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 7, 7, ~</span>
-<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_tests                 &lt;int&gt; 2, 6, 26, 36, 39, 65, 98, 121, 145, 161, 2~</span>
-<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_criticals             &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span>
-<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~</span></code></pre></div>
+<span class="co">#&gt; Rows: 839</span>
+<span class="co">#&gt; Columns: 24</span>
+<span class="co">#&gt; $ last_updated                &lt;dttm&gt; 2022-05-13 00:21:50, 2022-05-13 00:21:50,…</span>
+<span class="co">#&gt; $ date                        &lt;date&gt; 2020-01-25, 2020-01-26, 2020-01-27, 2020-…</span>
+<span class="co">#&gt; $ change_cases                &lt;int&gt; 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, …</span>
+<span class="co">#&gt; $ change_fatalities           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_tests                &lt;int&gt; 2, 4, 20, 10, 3, 26, 33, 23, 24, 16, 56, 5…</span>
+<span class="co">#&gt; $ change_hospitalizations     &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_criticals            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_recoveries           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_vaccinations         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_vaccinated           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_boosters_1           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_boosters_2           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ change_vaccines_distributed &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_cases                 &lt;int&gt; 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 7, 7, …</span>
+<span class="co">#&gt; $ total_fatalities            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_tests                 &lt;int&gt; 2, 6, 26, 36, 39, 65, 98, 121, 145, 161, 2…</span>
+<span class="co">#&gt; $ total_hospitalizations      &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_criticals             &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_recoveries            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_vaccinations          &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_vaccinated            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_boosters_1            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_boosters_2            &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+<span class="co">#&gt; $ total_vaccines_distributed  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></code></pre></div>
 <p>This function comes with a number of arguments to return very specific data:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">reports_ns_fatalities_2021</span> <span class="op">&lt;-</span>
@@ -191,18 +192,16 @@
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">reports_ns_fatalities_2021</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 365</span>
 <span class="co">#&gt; Columns: 5</span>
-<span class="co">#&gt; $ province          &lt;chr&gt; "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS"~</span>
-<span class="co">#&gt; $ last_updated      &lt;dttm&gt; 2022-01-20 14:12:04, 2022-01-20 14:12:04, 2022-01-2~</span>
-<span class="co">#&gt; $ date              &lt;date&gt; 2021-01-01, 2021-01-02, 2021-01-03, 2021-01-04, 202~</span>
-<span class="co">#&gt; $ change_fatalities &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~</span>
-<span class="co">#&gt; $ total_fatalities  &lt;int&gt; 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, ~</span></code></pre></div>
+<span class="co">#&gt; $ province          &lt;chr&gt; "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS", "NS"…</span>
+<span class="co">#&gt; $ last_updated      &lt;dttm&gt; 2022-05-12 00:52:17, 2022-05-12 00:52:17, 2022-05-1…</span>
+<span class="co">#&gt; $ date              &lt;date&gt; 2021-01-01, 2021-01-02, 2021-01-03, 2021-01-04, 202…</span>
+<span class="co">#&gt; $ change_fatalities &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…</span>
+<span class="co">#&gt; $ total_fatalities  &lt;int&gt; 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, …</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="to-do">To-do<a class="anchor" aria-label="anchor" href="#to-do"></a>
 </h2>
-<ul>
-<li>Consider adding <code>memoise</code> functionality to avoid repeated API requests.</li>
-</ul>
+<ul><li>Consider adding <code>memoise</code> functionality to avoid repeated API requests.</li></ul>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -265,7 +264,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
