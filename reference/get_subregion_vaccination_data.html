@@ -81,13 +81,18 @@ To get a list of available sub-regions, use the function <code><a href="get_subr
 <dd><p>One of "current", "recent", or "all" to specify the time frame
 of the reports returned. If choosing "all" reports, must also provide one
 or more sub-region codes.</p></dd>
+
+
 <dt>subregion_code</dt>
 <dd><p>One or more sub-region codes. Returns all reports for
 those sub-regions (even if <code>dates</code> is not "all")</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A data frame with one row per sub-region report.</p>
+    
+
+<p>A data frame with one row per sub-region report.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -105,34 +110,34 @@ https://api.covid19tracker.ca/docs/1.0/vaccinations.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 806 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        code  date      total_dose_1 percent_dose_1 source_dose_1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK001 2022-02-…        <span style="text-decoration: underline;">18</span>733          0.700 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK002 2022-02-…         <span style="text-decoration: underline;">1</span>959          0.683 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK003 2022-02-…        <span style="text-decoration: underline;">16</span>606          0.751 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK004 2022-02-…        <span style="text-decoration: underline;">66</span>614          0.863 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK005 2022-02-…        <span style="text-decoration: underline;">67</span>900          0.792 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK006 2022-02-…        <span style="text-decoration: underline;">32</span>682          0.819 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK007 2022-02-…       <span style="text-decoration: underline;">263</span>867          0.771 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK008 2022-02-…        <span style="text-decoration: underline;">27</span>576          0.766 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK009 2022-02-…        <span style="text-decoration: underline;">75</span>858          0.791 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-05-13 <span style="color: #949494;">00:08:41</span> SK010 2022-02-…       <span style="text-decoration: underline;">221</span>443          0.822 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK001 2022-02-…        <span style="text-decoration: underline;">18</span>733          0.700 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK002 2022-02-…         <span style="text-decoration: underline;">1</span>959          0.683 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK003 2022-02-…        <span style="text-decoration: underline;">16</span>606          0.751 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK004 2022-02-…        <span style="text-decoration: underline;">66</span>614          0.863 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK005 2022-02-…        <span style="text-decoration: underline;">67</span>900          0.792 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK006 2022-02-…        <span style="text-decoration: underline;">32</span>682          0.819 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK007 2022-02-…       <span style="text-decoration: underline;">263</span>867          0.771 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK008 2022-02-…        <span style="text-decoration: underline;">27</span>576          0.766 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK009 2022-02-…        <span style="text-decoration: underline;">75</span>858          0.791 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-06-16 <span style="color: #949494;">01:28:17</span> SK010 2022-02-…       <span style="text-decoration: underline;">221</span>443          0.822 total        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 796 more rows, and 6 more variables: total_dose_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percent_dose_2 &lt;dbl&gt;, source_dose_2 &lt;chr&gt;, total_dose_3 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percent_dose_3 &lt;dbl&gt;, source_dose_3 &lt;chr&gt;</span></span>
 <span class="r-in"><span class="fu">get_subregion_vaccination_data</span><span class="op">(</span><span class="st">"recent"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 396 × 12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 567 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    last_updated        date      code  total_dose_1 percent_dose_1 source_dose_1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB001         <span style="text-decoration: underline;">4</span>700          0.748 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB002         <span style="text-decoration: underline;">6</span>567          0.787 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB003         <span style="text-decoration: underline;">4</span>085          0.605 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB004        <span style="text-decoration: underline;">12</span>446          0.750 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB005        <span style="text-decoration: underline;">15</span>660          0.607 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB006         <span style="text-decoration: underline;">9</span>866          0.518 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB007         <span style="text-decoration: underline;">7</span>100          0.639 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB008         <span style="text-decoration: underline;">2</span>845          0.444 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB009        <span style="text-decoration: underline;">19</span>745          0.711 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-05-13 <span style="color: #949494;">00:21:05</span> 2022-05-… AB010         <span style="text-decoration: underline;">2</span>295          0.658 total        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 386 more rows, and 6 more variables: total_dose_2 &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB001         <span style="text-decoration: underline;">4</span>712          0.750 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB002         <span style="text-decoration: underline;">6</span>586          0.789 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB003         <span style="text-decoration: underline;">4</span>104          0.608 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB004        <span style="text-decoration: underline;">12</span>470          0.751 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB005        <span style="text-decoration: underline;">15</span>728          0.609 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB006         <span style="text-decoration: underline;">9</span>895          0.520 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB007         <span style="text-decoration: underline;">7</span>113          0.641 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB008         <span style="text-decoration: underline;">2</span>854          0.445 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB009        <span style="text-decoration: underline;">19</span>809          0.714 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2022-06-16 <span style="color: #949494;">01:37:06</span> 2022-06-… AB010         <span style="text-decoration: underline;">2</span>299          0.660 total        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 557 more rows, and 6 more variables: total_dose_2 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percent_dose_2 &lt;dbl&gt;, source_dose_2 &lt;chr&gt;, total_dose_3 &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percent_dose_3 &lt;dbl&gt;, source_dose_3 &lt;chr&gt;</span></span>
 <span class="r-in"><span class="fu">get_subregion_vaccination_data</span><span class="op">(</span><span class="st">"all"</span>, subregion_code <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ON382"</span>, <span class="st">"SK007"</span><span class="op">)</span><span class="op">)</span></span>
@@ -163,7 +168,7 @@ https://api.covid19tracker.ca/docs/1.0/vaccinations.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
     </footer></div>

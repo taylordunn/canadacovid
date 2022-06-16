@@ -60,10 +60,13 @@
 <dd><p>Logical, indicating if only provinces/territories should be
 returned. If FALSE, also returned non-geographic entities like
 Repatriated Canadians and the Federal Allocation for vaccinations.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A data frame with a row per province/territory.</p>
+    
+
+<p>A data frame with a row per province/territory.</p>
     </div>
 
     <div class="section level2">
@@ -78,10 +81,10 @@ Repatriated Canadians and the Federal Allocation for vaccinations.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     3 NS    Nova Scotia           <span style="text-decoration: underline;">992</span>055 5.33<span style="color: #949494;">e</span>4  <span style="text-decoration: underline;">44</span>354 TRUE       No report …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 NB    New Brunswick         <span style="text-decoration: underline;">789</span>225 7.14<span style="color: #949494;">e</span>4  <span style="text-decoration: underline;">36</span>966 TRUE       No report …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 MB    Manitoba             1<span style="text-decoration: underline;">383</span>765 5.54<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">72</span>688 TRUE       No report …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 BC    British Columbia     5<span style="text-decoration: underline;">214</span>805 9.25<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">295</span>401 TRUE       No report …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 BC    British Columbia     5<span style="text-decoration: underline;">214</span>805 9.25<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">295</span>401 TRUE       Reported   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 PE    Prince Edward Is…     <span style="text-decoration: underline;">164</span>318 5.66<span style="color: #949494;">e</span>3   <span style="text-decoration: underline;">6</span>994 TRUE       No report …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 SK    Saskatchewan         1<span style="text-decoration: underline;">179</span>844 5.92<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">80</span>679 TRUE       Reported   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 AB    Alberta              4<span style="text-decoration: underline;">442</span>879 6.42<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">344</span>812 TRUE       No report …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 AB    Alberta              4<span style="text-decoration: underline;">442</span>879 6.42<span style="color: #949494;">e</span>5 <span style="text-decoration: underline;">344</span>812 TRUE       Reported   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 NL    Newfoundland and…     <span style="text-decoration: underline;">520</span>553 3.74<span style="color: #949494;">e</span>5  <span style="text-decoration: underline;">33</span>241 TRUE       No report …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    11 NT    Northwest Territ…      <span style="text-decoration: underline;">45</span>504 1.18<span style="color: #949494;">e</span>6   <span style="text-decoration: underline;">4</span>730 TRUE       No report …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    12 YT    Yukon                  <span style="text-decoration: underline;">42</span>986 4.74<span style="color: #949494;">e</span>5   <span style="text-decoration: underline;">3</span>046 TRUE       No report …</span>
@@ -96,10 +99,10 @@ Repatriated Canadians and the Federal Allocation for vaccinations.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     3 NS    Nova Scotia          <span style="text-decoration: underline;">992</span>055   <span style="text-decoration: underline;">53</span>338  <span style="text-decoration: underline;">44</span>354 TRUE       <span style="color: #949494;">"</span>No report…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 NB    New Brunswick        <span style="text-decoration: underline;">789</span>225   <span style="text-decoration: underline;">71</span>450  <span style="text-decoration: underline;">36</span>966 TRUE       <span style="color: #949494;">"</span>No report…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 MB    Manitoba            1<span style="text-decoration: underline;">383</span>765  <span style="text-decoration: underline;">553</span>556  <span style="text-decoration: underline;">72</span>688 TRUE       <span style="color: #949494;">"</span>No report…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 BC    British Columbia    5<span style="text-decoration: underline;">214</span>805  <span style="text-decoration: underline;">925</span>186 <span style="text-decoration: underline;">295</span>401 TRUE       <span style="color: #949494;">"</span>No report…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 BC    British Columbia    5<span style="text-decoration: underline;">214</span>805  <span style="text-decoration: underline;">925</span>186 <span style="text-decoration: underline;">295</span>401 TRUE       <span style="color: #949494;">"</span>Reported<span style="color: #949494;">"</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 PE    Prince Edward I…     <span style="text-decoration: underline;">164</span>318    <span style="text-decoration: underline;">5</span>660   <span style="text-decoration: underline;">6</span>994 TRUE       <span style="color: #949494;">"</span>No report…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 SK    Saskatchewan        1<span style="text-decoration: underline;">179</span>844  <span style="text-decoration: underline;">591</span>670  <span style="text-decoration: underline;">80</span>679 TRUE       <span style="color: #949494;">"</span>Reported<span style="color: #949494;">"</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 AB    Alberta             4<span style="text-decoration: underline;">442</span>879  <span style="text-decoration: underline;">642</span>317 <span style="text-decoration: underline;">344</span>812 TRUE       <span style="color: #949494;">"</span>No report…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 AB    Alberta             4<span style="text-decoration: underline;">442</span>879  <span style="text-decoration: underline;">642</span>317 <span style="text-decoration: underline;">344</span>812 TRUE       <span style="color: #949494;">"</span>Reported<span style="color: #949494;">"</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 NL    Newfoundland an…     <span style="text-decoration: underline;">520</span>553  <span style="text-decoration: underline;">373</span>872  <span style="text-decoration: underline;">33</span>241 TRUE       <span style="color: #949494;">"</span>No report…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    11 NT    Northwest Terri…      <span style="text-decoration: underline;">45</span>504 1<span style="text-decoration: underline;">183</span>085   <span style="text-decoration: underline;">4</span>730 TRUE       <span style="color: #949494;">"</span>No report…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    12 YT    Yukon                 <span style="text-decoration: underline;">42</span>986  <span style="text-decoration: underline;">474</span>391   <span style="text-decoration: underline;">3</span>046 TRUE       <span style="color: #949494;">"</span>No report…</span>
@@ -119,7 +122,7 @@ Repatriated Canadians and the Federal Allocation for vaccinations.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
     </footer></div>
