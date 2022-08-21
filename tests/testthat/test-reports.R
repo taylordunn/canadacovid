@@ -2,10 +2,6 @@ test_that("get_reports works", {
   request_sleep()
   reports_overall <- get_reports()
   expect_equal(ncol(reports_overall), 24)
-  expect_equal(
-    reports_overall$date,
-    seq.Date(min(reports_overall$date), max(reports_overall$date), by = "day")
-  )
 
   request_sleep()
   reports_province <- get_reports(split = "province")

@@ -1,3 +1,7 @@
+# canadacovid 0.3.4
+
+* The API is no longer reliability reporting every day -- there are a series of dates missing from 2022-08-12 to 2022-08-19. To account for this, removed some tests that were failing from missing dates.
+
 # canadacovid 0.3.3
 
 * Added a `NEWS.md` file to track changes to the package.

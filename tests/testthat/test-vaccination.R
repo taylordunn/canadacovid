@@ -7,11 +7,6 @@ test_that("get_vaccination_data works", {
   request_sleep()
   vaccination_data_report <- get_vaccination_data(type = "reports")
   expect_equal(ncol(vaccination_data_report), 12)
-  expect_equal(
-    vaccination_data_report$date,
-    seq.Date(min(vaccination_data_report$date),
-             max(vaccination_data_report$date), by = "day")
-  )
 
   request_sleep()
   vaccination_data_summary_region <- get_vaccination_data(split = "region")
@@ -40,7 +35,11 @@ test_that("get_subregion_vaccination_data works", {
                   subregions$code)
 
   request_sleep()
-  subregion_vaccination_data_recent <-
-    get_subregion_vaccination_data(dates = "recent")
-  expect_true(nrow(subregion_vaccination_data_recent) > 0)
+  subregion_vaccination_data_on382_sk007 <-
+    get_subregion_vaccination_data(dates = "all",
+                                   subregion_code = c("ON382", "SK007"))
+  expect_equal(
+    unique(subregion_vaccination_data_on382_sk007$sub_region),
+    c("ON382", "SK007")
+  )
 })
