@@ -20,7 +20,7 @@ to return reports for specific provinces.'><meta property="og:image" content="ht
     
     <a class="navbar-brand me-2" href="../index.html">canadacovid</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,7 +130,6 @@ a <code>province</code> variable if data is split by province.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2020-12-26 80+              0 80+             <span style="text-decoration: underline;">2</span>229     <span style="text-decoration: underline;">2</span>229</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2020-12-26 0-15             0 0-15               5        5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 658 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span>
 <span class="r-in"><span><span class="fu">get_vaccine_age_groups</span><span class="op">(</span>split <span class="op">=</span> <span class="st">"province"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17,495 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    date       group_code  full group partial atleast1 province</span>
@@ -146,7 +145,6 @@ a <code>province</code> variable if data is split by province.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2020-12-14 60-69          0 60-69      26       26 QC      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2020-12-14 70-79          0 70-79      35       35 QC      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 17,485 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span>
 <span class="r-in"><span><span class="fu">get_vaccine_age_groups</span><span class="op">(</span>province <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"AB"</span>, <span class="st">"SK"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3,489 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    province date       group_code    full group        partial atleast1</span>
@@ -162,7 +160,6 @@ a <code>province</code> variable if data is split by province.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> AB       2021-01-02 80+              0 80+              708      708</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> AB       2021-01-02 0-15             0 0-15               0        0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 3,479 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span>
 <span class="r-in"><span><span class="fu">get_vaccine_age_groups</span><span class="op">(</span>province <span class="op">=</span> <span class="st">"NS"</span>, group <span class="op">=</span> <span class="st">"18-29"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 42 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    province date        full group partial atleast1</span>
@@ -178,7 +175,6 @@ a <code>province</code> variable if data is split by province.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> NS       2021-06-12  <span style="text-decoration: underline;">5</span>273 18-29   <span style="text-decoration: underline;">66</span>881    <span style="text-decoration: underline;">72</span>154</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> NS       2021-06-19  <span style="text-decoration: underline;">6</span>312 18-29   <span style="text-decoration: underline;">81</span>947    <span style="text-decoration: underline;">88</span>259</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 32 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows</span></span>
 <span class="r-in"><span><span class="fu">get_vaccine_age_groups</span><span class="op">(</span>group <span class="op">=</span> <span class="st">"80+"</span>, after <span class="op">=</span> <span class="st">"2021-12-01"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   date          full group partial atleast1</span>
