@@ -12,6 +12,7 @@ status](https://www.r-pkg.org/badges/version/canadacovid)](https://CRAN.R-projec
 [![R-CMD-check](https://github.com/taylordunn/canadacovid/workflows/R-CMD-check/badge.svg)](https://github.com/taylordunn/canadacovid/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/taylordunn/canadacovid/branch/main/graph/badge.svg)](https://app.codecov.io/gh/taylordunn/canadacovid?branch=main)
+[![](https://cranlogs.r-pkg.org/badges/canadacovid)](https://cran.r-project.org/package=canadacovid)
 <!-- badges: end -->
 
 The goal of `canadacovid` is to provide a wrapper around the API service
