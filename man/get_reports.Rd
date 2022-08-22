@@ -58,7 +58,6 @@ codes (e.g. "1204") to return specific health regions.
 \examples{
 
 get_reports()
-get_reports("province")
 get_reports(province = c("AB", "SK"))
 get_reports(region = 1204)
 get_reports(region = c("472", 1204), stat = "cases")
